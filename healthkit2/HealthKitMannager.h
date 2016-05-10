@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+
+#import <UIKit/UIKit.h>
+
 @protocol HealthKitDelegate <NSObject>
 
 - (void)receiveHealthKitHeight:(double)height;

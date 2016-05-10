@@ -25,14 +25,80 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
     [HealthKitMannager healthInstance].delegate = self;
-    [[HealthKitMannager healthInstance] healthRequestSetting];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(windowAction) name:UIWindowDidResignKeyNotification object:nil];
+    NSArray *windows = [[UIApplication sharedApplication] windows];
+    NSLog(@"array = %@,count = %lu",windows,(unsigned long)windows.count);
+    
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
     button.frame = CGRectMake(50, 100, [UIScreen mainScreen].bounds.size.width - 100, 100);
     [button addTarget:self action:@selector(buttonAction) forControlEvents:UIControlEventTouchUpInside];
     button.backgroundColor = [UIColor redColor];
     [self.view addSubview:button];
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    NSArray *windows = [[UIApplication sharedApplication] windows];
+    NSLog(@"array = %@,count = %lu",windows,(unsigned long)windows.count);
+}
+
+- (void)windowAction{
+    NSLog(@"winodw事件");
+    NSArray *windows = [[UIApplication sharedApplication] windows];
+    NSLog(@"array = %@,count = %lu",windows,(unsigned long)windows.count);
+    UIWindow *currentWindow = windows[2];
+    currentWindow.backgroundColor = [UIColor clearColor];
+}
+
+- (void)windowDealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    
+    [[HealthKitMannager healthInstance] healthRequestSetting];
+    
+    
+}
+
+- (UIViewController *)activityViewController
+{
+    UIViewController* activityViewController = nil;
+    
+    UIWindow *window = [[UIApplication sharedApplication] keyWindow];
+    if(window.windowLevel != UIWindowLevelNormal)
+    {
+        NSArray *windows = [[UIApplication sharedApplication] windows];
+        for(UIWindow *tmpWin in windows)
+        {
+            if(tmpWin.windowLevel == UIWindowLevelNormal)
+            {
+                window = tmpWin;
+                break;
+            }
+        }
+    }
+    
+    NSArray *viewsArray = [window subviews];
+    if([viewsArray count] > 0)
+    {
+        UIView *frontView = [viewsArray objectAtIndex:0];
+        
+        id nextResponder = [frontView nextResponder];
+        
+        if([nextResponder isKindOfClass:[UIViewController class]])
+        {
+            activityViewController = nextResponder;
+        }
+        else
+        {
+            activityViewController = window.rootViewController;
+        }
+    }
+    
+    return activityViewController;
 }
 
 - (void)buttonAction{

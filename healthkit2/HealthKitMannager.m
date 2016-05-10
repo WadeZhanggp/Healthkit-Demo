@@ -54,24 +54,26 @@
                                nil];
     
     //一组包含要读取的数据类型
-    NSSet *readObjectTypes  = [NSSet setWithObjects:
+    //NSSet *readObjectTypes  = [NSSet setWithObjects:
                                //[HKObjectType characteristicTypeForIdentifier:HKCharacteristicTypeIdentifierDateOfBirth],
-                               [HKObjectType characteristicTypeForIdentifier:HKCharacteristicTypeIdentifierBiologicalSex],
+                               //[HKObjectType characteristicTypeForIdentifier:HKCharacteristicTypeIdentifierBiologicalSex],
                                //[HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierStepCount],
-                               [HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierDistanceCycling],
+                               //[HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierDistanceCycling],
                                //[HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierDistanceWalkingRunning],
-                               [HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierBodyMass],
-                               [HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierHeight],
-                               nil];
+                               //[HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierBodyMass],
+                               //[HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierHeight],
+                               //nil];
     
     // Request access
     [self.healthStore requestAuthorizationToShareTypes:shareObjectTypes
-                                        readTypes:readObjectTypes
+                                        readTypes:nil
                                        completion:^(BOOL success, NSError *error) {
-                                           
+                                           [UIApplication sharedApplication].keyWindow.backgroundColor = [UIColor greenColor];
                                            if(success == YES)
                                            {
                                                NSLog(@">>>>>授权成功");
+                                               NSArray *windows = [[UIApplication sharedApplication] windows];
+                                               NSLog(@"array = %@,count = %lu",windows,(unsigned long)windows.count);
                                            }
                                            else
                                            {
@@ -82,7 +84,6 @@
                                            
                                        }];
 
-    
 }
 
 - (void)writeDistanceCycling:(NSInteger)length duration:(NSInteger)time{

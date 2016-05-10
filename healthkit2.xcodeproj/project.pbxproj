@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3966D9481CDB43DC006F0085 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3966D9471CDB43DC006F0085 /* HealthKit.framework */; };
 		39AE48621CA52FF40016B5AD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 39AE48611CA52FF40016B5AD /* main.m */; };
 		39AE48651CA52FF40016B5AD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 39AE48641CA52FF40016B5AD /* AppDelegate.m */; };
 		39AE48681CA52FF40016B5AD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39AE48671CA52FF40016B5AD /* ViewController.m */; };
@@ -15,7 +16,6 @@
 		39AE48701CA52FF40016B5AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39AE486E1CA52FF40016B5AD /* LaunchScreen.storyboard */; };
 		39AE487B1CA52FF40016B5AD /* healthkit2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 39AE487A1CA52FF40016B5AD /* healthkit2Tests.m */; };
 		39AE48861CA52FF40016B5AD /* healthkit2UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 39AE48851CA52FF40016B5AD /* healthkit2UITests.m */; };
-		39AE48941CA530B20016B5AD /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39AE48931CA530B20016B5AD /* HealthKit.framework */; };
 		39AE48971CA537980016B5AD /* HealthKitMannager.m in Sources */ = {isa = PBXBuildFile; fileRef = 39AE48961CA537980016B5AD /* HealthKitMannager.m */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3966D9471CDB43DC006F0085 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		39AE485D1CA52FF40016B5AD /* healthkit2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = healthkit2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39AE48611CA52FF40016B5AD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		39AE48631CA52FF40016B5AD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -53,7 +54,6 @@
 		39AE48811CA52FF40016B5AD /* healthkit2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = healthkit2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		39AE48851CA52FF40016B5AD /* healthkit2UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = healthkit2UITests.m; sourceTree = "<group>"; };
 		39AE48871CA52FF40016B5AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		39AE48931CA530B20016B5AD /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		39AE48951CA537980016B5AD /* HealthKitMannager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthKitMannager.h; sourceTree = "<group>"; };
 		39AE48961CA537980016B5AD /* HealthKitMannager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthKitMannager.m; sourceTree = "<group>"; };
 		39AE48981CA53B140016B5AD /* healthkit2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = healthkit2.entitlements; sourceTree = "<group>"; };
@@ -64,7 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39AE48941CA530B20016B5AD /* HealthKit.framework in Frameworks */,
+				3966D9481CDB43DC006F0085 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,7 +88,7 @@
 		39AE48541CA52FF40016B5AD = {
 			isa = PBXGroup;
 			children = (
-				39AE48931CA530B20016B5AD /* HealthKit.framework */,
+				3966D9471CDB43DC006F0085 /* HealthKit.framework */,
 				39AE485F1CA52FF40016B5AD /* healthkit2 */,
 				39AE48791CA52FF40016B5AD /* healthkit2Tests */,
 				39AE48841CA52FF40016B5AD /* healthkit2UITests */,
@@ -524,6 +524,7 @@
 				39AE488C1CA52FF40016B5AD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		39AE488D1CA52FF40016B5AD /* Build configuration list for PBXNativeTarget "healthkit2Tests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +533,7 @@
 				39AE488F1CA52FF40016B5AD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		39AE48901CA52FF40016B5AD /* Build configuration list for PBXNativeTarget "healthkit2UITests" */ = {
 			isa = XCConfigurationList;
@@ -540,6 +542,7 @@
 				39AE48921CA52FF40016B5AD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
